@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+  <meta charset=utf-8>
+  <title>Taak Dev II</title>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-storage.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+  <!-- Compiled and minified CSS from MaterializeCSS (to make form/searchbars look better)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript from MaterializeCSS (to make buttons on cards work)-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>Music Library</h1>
+    <p>ENTER ARTIST, GENRE, SONG OR ALBUM NAME HERE <input id="search"></p>
+    <button class="btn" id="submit">SEARCH</button>
+    <div class="row" id="output"></div>
+  </div>
+
+
+  <main>
+    <section class="formWrapper">
+      <h4>New comment</h4>
+      <form id="form">
+        <label>
+          WHAT'S YOUR COMMENT ABOUT?
+          <input type="text" name="title" id="title" />
+        </label>
+        <label>
+          COMMENT
+          <textarea name="description" id="description"></textarea>
+        </label>
+        <br>
+        <button class="btn" type="submit">
+          POST
+        </button>
+
+      </form>
+    </section>
+    <br>
+    <hr>
+    <div id="comments">
+
+
+    </div>
+  </main>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
