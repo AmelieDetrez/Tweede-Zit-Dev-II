@@ -21,7 +21,7 @@ class Firebase {
     }
 }
 
-export const firebaseInstance = new Firebase('AIzaSyCMCrXJpcUe_oWZ3CyNMnC05DvoV6XNPeg', 'taak-dev-ii', 'taak-dev-ii.appspot.com');
+const firebaseInstance = new Firebase('AIzaSyCMCrXJpcUe_oWZ3CyNMnC05DvoV6XNPeg', 'taak-dev-ii', 'taak-dev-ii.appspot.com');
 
 //SHOWING COMMENTS//
 
@@ -59,7 +59,7 @@ class Comments {
 const comments = new Comments();
 comments.render();
 
-export class Comment {
+class Comment {
     constructor(data) {
         this.data = data;
     }
@@ -88,9 +88,7 @@ export class Comment {
     }
 }
 
-export const test = 5;
-
-//SUBMITTING FORM, DOESN'T WORK :(//
+//SUBMITTING FORM//
 
 class Form {
     constructor() {
@@ -100,11 +98,7 @@ class Form {
         this.bindEvents();
 
     }
-    uploadFile(callback) {
-        firebaseInstance.fileStorage.child(this.selectedFile.name).put(this.selectedFile).then((snapshot) => {
-            snapshot.ref.getDownloadURL().then(callback);
-        });
-    }
+
     uploadData() {
         firebaseInstance.commentsCollection.add({
             title: this.titleElement.value,
@@ -118,8 +112,7 @@ class Form {
     }
     submitForm(event) {
         event.preventDefault();
-        this.uploadFile(() => {
-            this.uploadData();
+        this.uploadData(() => {
             this.clearForm();
         });
     }
@@ -128,7 +121,7 @@ class Form {
     }
 }
 
-new Form();
+new Form()
 
 //API//
 
